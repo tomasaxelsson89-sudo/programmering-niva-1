@@ -1,0 +1,46 @@
+# Dictionary som lagrar kontakter
+kontakter = {}
+
+# Meny för kontaktboken
+while True:
+    print("\n--- Kontaktbok ---")
+    print("1. Lägg till kontakt")
+    print("2. Sök efter kontakt")
+    print("3. Avsluta")
+
+    val = input("Välj ett alternativ: ")
+
+    # Lägger till en kontakt
+    if val == "1":
+        namn = input("Skriv kontaktens namn: ")
+        telefonnummer = input("Skriv kontaktens telefonnummer: ")
+
+        kontakter[namn] = telefonnummer
+
+        print("Kontakt tillagd.")
+
+    # Söker efter en kontakt
+    elif val == "2":
+        namn = input("Skriv namnet på kontakten du söker: ")
+
+        if namn in kontakter:
+            print("Telefonnummer:", kontakter[namn])
+        else:
+            print("Kontakt finns ej.")
+
+    # Avslutar programmet
+    elif val == "3":
+        print("Programmet avslutas.")
+        break
+
+    # Hanterar ogiltigt menyval
+    else:
+        print("Ogiltigt val. Välj 1, 2 eller 3.")
+
+# Testning:
+# Test 1: Alternativ 1 lade till en kontakt med namn och telefonnummer.
+# Test 2: Alternativ 2 hittade en befintlig kontakt och visade telefonnumret.
+# Test 3: Sökning efter en kontakt som inte fanns gav meddelandet "Kontakt finns ej."
+# Test 4: Alternativ 3 avslutade programmet korrekt.
+# Test 5: Ett ogiltigt menyval gav ett tydligt felmeddelande.
+# Testerna visar att kontaktbokens meny, dictionary och sökfunktion fungerar som planerat.
